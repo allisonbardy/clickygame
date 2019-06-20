@@ -1,16 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router} from "react-router-dom";
 import Nav from "./components/Nav";
 import Jumbotron from "./components/Jumbotron";
 import Card from "./components/Card";
 import images from "./images.json";
 
+
 function App() {
   return (
-    <Router>
+    <div>
         <Nav />
         <Jumbotron />
-        <Card 
+        {images.map(imageObject => <Card key={imageObject.id} url={imageObject.image} name="allison"/>)}
+        {/* <Card 
           image={images[0].image}
         />
         <Card
@@ -45,8 +46,9 @@ function App() {
         />
         <Card
           image={images[11].image}
-        />
-    </Router>
+        /> */}
+        </div>
+
   );
 }
 
